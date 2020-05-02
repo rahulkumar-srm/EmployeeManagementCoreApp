@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "User Settings";
+}
+
+<h1>User Settings</h1>
+
+<div class="container">
+    <br /><br />
+    <div class="card card-login mx-auto text-center" style="width: 600px;">
+        <div class="card-header mx-auto">
+            <span class="logo_title mt-5"> Enable Two Factor Authentication </span>
+        </div>
+        <div class="card-body">
+            <form action="" method="post">
+                <b style="float:left;">Enable Two Factor Authentication</b>
+                <input id="toggle-state" type="checkbox" data-toggle="toggle" data-on="Enabled" data-off="Disabled" data-size="sm">
+                <br /><br />
+                <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="glyphicon glyphicon-phone"></i></span>
+                    </div>
+                    <input id="phone" type="tel" name="phone" class="form-control" placeholder="Mobile Number" disabled>
+                </div>
+                <div class="form-group">
+                    <input id="submit" type="submit" name="btn" value="Submit" class="btn btn-outline-danger float-right login_btn" disabled>
+                </div>
+
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8L-6ZNt7CWRNtGbo8xDGK5VZl-i77H8_fTvSpyLADQi-bW7IHGXCnY6KX1CH-8RwJHbVNKKvKaAjDyoUrtvXZFNGgCs_iODrR1NasHA9Hzr5gn2T52jjgN2dWTPc1m-4A-nWut9dDUztcihhTO3-sRZoDX9sJOaPxC4DsOFFHFdvv0nz2eFDp22xZHJSEWScQw">
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#toggle-state').change(function () {
+                if ($(this).prop('checked')) {
+                    $('#phone,#submit').removeAttr("disabled");
+                }
+                else {
+                    $('#phone,#submit').prop('disabled', true);
+                }
+        });
+        })
+    </script>
+}
+
