@@ -22,4 +22,4 @@ RUN dotnet publish "EmployeeManagementCoreApp.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "EmployeeManagementCoreApp.dll"] 
+ENTRYPOINT ["dotnet", "EmployeeManagementCoreApp.dll"]
